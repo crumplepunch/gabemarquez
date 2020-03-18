@@ -1,5 +1,5 @@
 {
-  "name": "waverly-client",
+  "name": "gabe-marquez",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,9 +39,9 @@
       "last 1 safari version"
     ]
   },
-  "description": "Client for waverly.works",
+  "description": "portfolio for gabe marquez",
   "main": "index.js",
   "devDependencies": {},
-  "author": "Gabe Marquez & Robert Vinluan",
+  "author": "Gabe Marquez",
   "license": "ISC"
 }
