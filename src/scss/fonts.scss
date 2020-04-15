@@ -8,15 +8,24 @@
 
 @font-face {
   font-family: "mplus mono";
-  src: url("../fonts/mplus-1m-light.ttf") format("truetype");
+  src: url("./fonts/mplus-1m-light.ttf") format("truetype");
 }
 
 @font-face {
+  font-family: "Archivo Black Regular";
+  src: url("./fonts/ArchivoBlack-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cotham Sans";
+  src: url("./fonts/CothamSans.otf") format("opentype");
+}
+@font-face {
   font-family: "OfficeCodePro";
-  src: url("../fonts/OfficeCodePro/WOFF2/OfficeCodePro-Light.woff2") format("woff2");
+  src: url("./fonts/Office\ Code\ Pro/WOFF/OfficeCodePro-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: "CooperHewittHeavy";
-  src: url("../fonts/CooperHewitt/CooperHewitt-Heavy.otf") format("opentype");
+  src: url("./fonts/CooperHewitt/CooperHewitt-Heavy.otf") format("opentype");
 }

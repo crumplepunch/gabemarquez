@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './scss/index.scss'
-import { Routes } from './scenes'
+import App from './Home'
 import * as serviceWorker from './serviceWorker'
 
-ReactDOM.render(<Routes />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 serviceWorker.unregister()
