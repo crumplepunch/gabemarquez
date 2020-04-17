@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "mplus mono";
+  font-family: "mplus m1 light";
   src: url("./fonts/mplus-1m-light.ttf") format("truetype");
 }
 
@@ -21,6 +21,12 @@
   src: url("./fonts/CothamSans.otf") format("opentype");
 }
 @font-face {
+  font-family: "Libre Baskerville";
+  font-weight: 400;
+  src: url("./fonts/Libre-Baskerville/LibreBaskerville-Regular.ttf") format("woff");
+}
+
+@font-face {
   font-family: "OfficeCodePro";
   src: url("./fonts/Office\ Code\ Pro/WOFF/OfficeCodePro-Light.woff") format("woff");
 }
@@ -28,4 +34,31 @@
 @font-face {
   font-family: "CooperHewittHeavy";
   src: url("./fonts/CooperHewitt/CooperHewitt-Heavy.otf") format("opentype");
+}
+
+$titleText: "Cotham Sans";
+$displayText: "CooperHewittHeavy";
+$subHeaderText: "mplus m1 light";
+$infoTitleText: "Libre Baskerville";
+$bodyText: "Libre Baskerville";
+
+.title-text {
+  font-family: $titleText;
+}
+
+.info-title-text {
+  font-family: $infoTitleText;
+  font-size: 20px;
+  letter-spacing: 20px;
+}
+
+.sub-header-text {
+  font-family: $subHeaderText;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.info-body-text {
+  font-family: $bodyText;
+  line-height: 26px;
 }

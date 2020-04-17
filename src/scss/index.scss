@@ -1,8 +1,7 @@
 @import "./fonts.scss";
-$display: "CooperHewittHeavy";
+
 $hover-height: 8px;
 $yellow: rgb(255, 223, 42);
-$text: "Cotham Sans";
 
 body {
   // background: #656a73;
@@ -21,17 +20,18 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  font-family: "Lifted";
 
   .debug-outline {
     border: 1px dashed pink;
   }
 }
+
 div {
-  font-family: $text;
+  font-family: $bodyText;
 }
+
 h1 {
-  font-family: $display;
+  font-family: $displayText;
   text-transform: uppercase;
   letter-spacing: 40px;
   font-size: 80px;
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-family: $text;
+  font-family: $titleText;
   margin: 1px 0;
   font-size: 34px;
 }
