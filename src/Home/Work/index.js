@@ -1,5 +1,5 @@
 import React from 'react'
-import Info, {info } from '../../components/Info'
+import Info, { info } from '../../components/Info'
 
 const TitleText = ({ children }) => {
   return <h2 className='underline-hover title-text' style={{
@@ -36,7 +36,7 @@ export default () => {
 
     <Info>
       <info.h1>SureDone </info.h1>
-      <info.h2 style={{marginBottom: 32}}>Multi-Channel eCommerce</info.h2>
+      <info.h2 style={{ marginBottom: 32 }}>Multi-Channel eCommerce</info.h2>
       <info.p>
         Being the third engineering hire on such an earnest, intelligent, and kind team was an absolute joy.
       </info.p>
@@ -72,7 +72,7 @@ export default () => {
 
     <Info>
       <info.h1>NIKSUN</info.h1>
-      <info.h2 style={{marginBottom: 16}}>Cyber Security</info.h2>
+      <info.h2 style={{ marginBottom: 32 }}>Cyber Security</info.h2>
 
       <info.p>Though my time here was short, I lead a complete redesign and rebuild of their flagship product's front end. The industry wasn't a good fit, and this particular gig lacked the mentorship I was looking for as a more junior level engineer. </info.p>
       <info.h2 style={{
