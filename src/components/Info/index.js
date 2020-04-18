@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const info = {
-  h1: ({ children }) => <h1 className='info-title-text'>{children}</h1>,
-  h2: ({ children }) => <h2 className='sub-header-text'>{children}</h2>,
-  p: ({ children }) => <p className='info-body-text'>{children}</p>
+  h1: ({ children, style={} }) => <h1 style={style} className='info-title-text'>{children}</h1>,
+  h2: ({ children, style={} }) => <h2 style={style} className='sub-header-text'>{children}</h2>,
+  p: ({ children, style={textAlign:'justify', marginTop: 0} }) => <p style={style} className='info-body-text'>{children}</p>
 }
 
 export default ({children}) => {
