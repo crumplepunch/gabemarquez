@@ -20,10 +20,11 @@ export default () => {
       flexFlow: 'column',
       width: '50vw',
       margin: '0 50px',
+      textTransform: 'lowercase'
     }}>
-      <TitleText>Freelance</TitleText>
-      <TitleText>Startups</TitleText>
       <TitleText>Friends</TitleText>
+      <TitleText>Startups</TitleText>
+      <TitleText>Freelance</TitleText>
     </div>
 
     <SureDone />
