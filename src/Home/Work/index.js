@@ -38,7 +38,7 @@ export default () => {
       <info.h1>SureDone </info.h1>
       <info.h2 style={{ marginBottom: 32 }}>Multi-Channel eCommerce</info.h2>
       <info.p>
-        Being the third engineering hire on such an earnest, intelligent, and kind team was an absolute joy.
+        Being the third engineering hire on such an earnest, intelligent, and high-performing team was an absolute joy.
       </info.p>
 
       <info.p>
