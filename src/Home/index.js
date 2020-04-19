@@ -1,5 +1,4 @@
 import React from 'react'
-import Info, { info } from '../components/Info'
 import Software from './Software'
 
 const Name = props => {
@@ -38,7 +37,7 @@ const Image = props => {
       backgroundImage: `url('')`,
       backgroundSize: 'contain',
       transform: 'scaleX(-1)'
-    }} src={`${process.env.PUBLIC_URL}/bg-image.jpg`}></img>
+    }} src={`${process.env.PUBLIC_URL}/bg-image.jpg`} alt="Portrait of Gabe Marquez"></img>
     <div style={{
       display: 'flex',
       overflow: 'hidden',
