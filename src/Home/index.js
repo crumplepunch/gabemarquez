@@ -1,6 +1,6 @@
 import React from 'react'
 import Info, { info } from '../components/Info'
-import Work from './Work'
+import Software from './Software'
 
 const Name = props => {
   const { children } = props
@@ -70,7 +70,7 @@ export default () => {
       height: '100vh',
       position: 'absolute'
     }}>
-      <Work />
+      <Software />
     </div>
 
   </>
