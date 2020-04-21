@@ -1,14 +1,16 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
+import { useWindowDimensions } from '../hooks/index'
+
 
 export default () => {
   const { x, o } = useSpring({
     config: {
-      mass: 3
+      mass: 5
     },
     from: {
       o: 0,
-      x: -20
+      x: -40
     },
     to: {
       o: 1,
@@ -16,21 +18,25 @@ export default () => {
     }
   })
 
+  const { height, width } = useWindowDimensions()
+
   return <div style={{
     display: 'flex',
     // height: '46vh',
     textTransform: 'uppercase',
-    width: '100vh',
+    width: height,
+    fontSize: .108 * height,
     flexFlow: 'column',
     // color: '#0f0f15',
     alignItems: "center",
-    position: 'fixed',
-    bottom: '0',
+    position: 'absolute',
+    bottom: 0,
     left: '0',
     transformOrigin: 'top left',
-    transform: 'translate(2vh, 14.6vh) rotate(-90deg)'
+    transform: `translate(${.02 * height}px, 120px) rotate(-90deg)`
   }}>
     <animated.div class='display-text' style={{
+      height: 120,
       transform: x.interpolate(x => `translateY(${x}px)`),
       opacity: o
     }}>

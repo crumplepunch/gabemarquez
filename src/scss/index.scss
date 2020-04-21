@@ -10,24 +10,18 @@ body {
   // background: #656a73;
   background: rgb(8, 5, 2);
   // height: 100%;
-  width: 100%;
+  // width: 100%;
   // color: rgb(255, 232, 204);
   // color: #000a05;
   // color: #280e17;
   // color: #fff8eb;
   color: #ffead6;
   // position: absolute;
-  overflow: hidden;
   display: block;
   margin: 0;
-  height: 100%;
-  width: 100%;
+  // height: 100%;
   justify-content: center;
   align-items: center;
-
-  .debug-outline {
-    border: 1px dashed pink;
-  }
 }
 
 div {
@@ -58,10 +52,6 @@ h2 {
   .debug-outline {
     border-color: khaki;
   }
-}
-
-.no-overflow {
-  overflow: hidden;
 }
 
 .hover-text {
