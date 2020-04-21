@@ -36,20 +36,40 @@
   src: url("./fonts/CooperHewitt/CooperHewitt-Heavy.otf") format("opentype");
 }
 
-$titleText: "Cotham Sans";
-$displayText: "CooperHewittHeavy";
+@font-face {
+  font-family: "Bluu Next";
+  src: url("./fonts/BluuNext-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "YoungSerif";
+  src: url("./fonts/YoungSerif-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Nichrome Black";
+  src: url("./fonts/Nichrome0.1-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: "Nichrome Regular";
+  src: url("./fonts/Nichrome0.1-Regular.otf") format("opentype");
+}
+
+$displayText: "YoungSerif";
 $subHeaderText: "mplus m1 light";
-$infoTitleText: "Libre Baskerville";
 $bodyText: "Libre Baskerville";
 
 .title-text {
-  font-family: $titleText;
+  font-family: $displayText;
 }
 
 .info-title-text {
-  font-family: $infoTitleText;
+  font-family: $displayText;
   font-size: 20px;
-  letter-spacing: 20px;
+}
+
+.display-text {
+  font-family: $displayText;
+  font-size: 10.8vh;
+  color: #ffb825;
 }
 
 .sub-header-text {
@@ -60,5 +80,7 @@ $bodyText: "Libre Baskerville";
 
 .info-body-text {
   font-family: $bodyText;
+  text-align: left;
+  font-size: 20px;
   line-height: 26px;
 }

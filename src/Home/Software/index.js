@@ -1,10 +1,16 @@
 import React from 'react'
 import SureDone from './suredone'
 import NIKSUN from './niksun'
+import DIMACS from './dimacs'
 import { TitleText } from '../../components'
 
 
 export default () => {
+  const carousel = [
+    <SureDone />,
+    <NIKSUN />,
+    <DIMACS />
+  ]
   return <div style={{
     height: '100%',
     width: '100%',
@@ -18,7 +24,7 @@ export default () => {
   }} >
     <div style={{
       flexFlow: 'column',
-      width: '50vw',
+      width: '500px',
       margin: '0 50px',
       textTransform: 'lowercase'
     }}>
@@ -28,6 +34,7 @@ export default () => {
     </div>
 
     <SureDone />
-    <NIKSUN />
+    {/* <NIKSUN />
+    <DIMACS /> */}
   </div >
 }

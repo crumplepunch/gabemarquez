@@ -3,6 +3,9 @@
 $hover-height: 8px;
 $yellow: rgb(255, 223, 42);
 
+@-ms-viewport {
+  width: device-width;
+}
 body {
   // background: #656a73;
   background: rgb(8, 5, 2);
@@ -10,8 +13,9 @@ body {
   width: 100%;
   // color: rgb(255, 232, 204);
   // color: #000a05;
-  color: #280e17;
+  // color: #280e17;
   // color: #fff8eb;
+  color: #ffead6;
   // position: absolute;
   overflow: hidden;
   display: block;
@@ -32,15 +36,12 @@ div {
 
 h1 {
   font-family: $displayText;
-  text-transform: uppercase;
-  letter-spacing: 40px;
   font-size: 80px;
   margin: 0;
   font-weight: normal;
 }
 
 h2 {
-  font-family: $titleText;
   margin: 1px 0;
   font-size: 34px;
 }

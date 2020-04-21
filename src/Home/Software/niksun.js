@@ -5,6 +5,7 @@ import { Career } from '../../components/Jobs'
 const career = {
   company: 'NIKSUN',
   summary: 'Cyber Security',
+  location: 'Princeton, New Jersey',
   positions: [
     { title: 'Front End Software Developer', dates: 'from:JAN.2016 to:MAR.2017', tools: 'Angular React Node Docker' }
   ]
