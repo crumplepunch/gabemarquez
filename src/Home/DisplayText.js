@@ -18,24 +18,23 @@ export default () => {
     }
   })
 
-  const { height, width } = useWindowDimensions()
+  const { height } = useWindowDimensions()
 
   return <div style={{
     display: 'flex',
-    // height: '46vh',
     textTransform: 'uppercase',
     width: height,
     fontSize: .108 * height,
     flexFlow: 'column',
-    // color: '#0f0f15',
     alignItems: "center",
     position: 'absolute',
     bottom: 0,
     left: '0',
+    zIndex: -1,
     transformOrigin: 'top left',
     transform: `translate(${.02 * height}px, 120px) rotate(-90deg)`
   }}>
-    <animated.div class='display-text' style={{
+    <animated.div className='display-text' style={{
       height: 120,
       transform: x.interpolate(x => `translateY(${x}px)`),
       opacity: o
