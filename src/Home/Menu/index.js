@@ -18,7 +18,7 @@ export const SectionContext = React.createContext()
 export const SectionContent = ({ children, transition }) => {
   const { currentSection, order } = useContext(SectionContext)
 
-  return <animated.div style={{
+  return <animated.div className='scroll' style={{
     ...transition
   }}>
     {children}
@@ -107,8 +107,7 @@ export const Section = ({ children, flex = false, name, selected, transition }) 
     </div>
 
     <div className="scroll-container" style={{
-      flexFlow: 'column',
-      overflowY: 'scroll'
+      flexFlow: 'column'
     }}>
       {tra.map(({ item, props }) => (
         item && <SectionContent transition={{
