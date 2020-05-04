@@ -12,6 +12,7 @@ import About from '../About'
 import {
   Link,
 } from 'react-router-dom'
+import { useWindowDimensions } from '../../hooks'
 export const SectionContext = React.createContext()
 
 export const SectionContent = ({ children, transition }) => {
@@ -79,7 +80,7 @@ const sections = [
 ]
 
 export const Section = ({ children, flex = false, name, selected, transition }) => {
-
+  const { height } = useWindowDimensions()
   const tra = useTransition(selected, null, {
     from: {
       opacity: 0,
@@ -87,7 +88,7 @@ export const Section = ({ children, flex = false, name, selected, transition }) 
     },
     enter: {
       opacity: 1,
-      height: 200
+      height: height
     },
     leave: {
       opacity: 0,
@@ -95,17 +96,22 @@ export const Section = ({ children, flex = false, name, selected, transition }) 
     }
   })
 
-  return (
+  return (<>
+    <Link to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
+
     <div className="scroll-container" style={{
       flexFlow: 'column',
       overflowY: 'scroll',
     }}>
-      <Link to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
       {tra.map(({ item, props }) => (
-        item && <SectionContent transition={props}>{children}</SectionContent>
+        item && <SectionContent transition={{
+          opacity: props.opacity,
+          maxHeight: '100%',
+          height: props.height.interpolate(x => `${x}px`),
+        }}>{children}</SectionContent>
       ))}
     </div>
-  )
+  </>)
   // const overrideStyle = {}
   // const { currentSection, order } = useContext(SectionContext)
 
@@ -146,6 +152,7 @@ export const Menu = () => {
 
   return <>
     <Section transition={transitions[0]} selected={currentSection === 'about'} name='about'>
+
       <About />
     </Section>
     <Section transition={transitions[1]} selected={currentSection === 'software'} name='software' >

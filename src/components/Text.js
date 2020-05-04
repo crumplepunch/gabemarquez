@@ -33,9 +33,6 @@ export const BodyText = ({ children }) => {
   const props = {
     className: 'body',
     style: {
-      transform: y.interpolate(y => `translateX(${y}px)`),
-      opacity: o,
-      margin: 0,
       fontSize: '22px',
     }
   }
