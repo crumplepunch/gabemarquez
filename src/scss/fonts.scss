@@ -60,6 +60,9 @@ $bodyText: "Libre Baskerville";
 .title-text {
   font-family: $displayText;
 }
+code {
+  font-family: $subHeaderText;
+}
 
 .info-title-text {
   font-family: $displayText;
@@ -82,4 +85,8 @@ $bodyText: "Libre Baskerville";
   text-align: left;
   font-size: 20px;
   line-height: 26px;
+}
+
+.body {
+  font-family: $bodyText;
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { info } from '../../components/Info'
 import { Career } from '../../components/Jobs'
 
 const career = {
@@ -13,6 +12,6 @@ const career = {
 
 export default () => {
   return <Career {...career} >
-    <info.p>Though my time here was short, I lead a complete redesign and rebuild of their flagship product's front end. The industry wasn't a good fit, and this particular gig lacked the mentorship I was looking for as a more junior level engineer. </info.p>
+    <p>Though my time here was short, I lead a complete redesign and rebuild of their flagship product's front end. The industry wasn't a good fit, and this particular gig lacked the mentorship I was looking for as a more junior level engineer. </p>
   </Career>
 }

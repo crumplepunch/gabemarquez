@@ -1,34 +1,43 @@
 import React from 'react'
-import Info, { info } from './Info'
+
 export const Career = ({ company, summary, positions, children: experience }) => {
-  return <Info>
-    <info.h1>{company} </info.h1>
-    <info.h2 style={{ marginBottom: 32, color: 'rgb(77, 72, 66)' }}>{summary}</info.h2>
+  return <div style={{
+    flexFlow: 'column',
+    maxWidth: 600,
+    marginTop: 60
+  }}>
+    <h1 style={{
+      fontSize: 20,
+    }}>{company} </h1>
+    <h2 style={{ fontSize: 20, marginBottom: 10, color: 'rgb(77, 72, 66)' }}>{summary}</h2>
 
     {experience}
 
-    <info.space />
 
-    {positions.map(position => <Position {...position} />)}
-  </Info>
-
+    {positions.map((position, key) => <Position key={key} {...position} />)}
+  </div>
 }
 
 export const Position = ({ title, dates, tools }) => {
   return <>
     <div style={{
+      fontFamily: 'mplus m1 light',
       justifyContent: 'space-between',
-      fontSize: 12,
-      width: '100%'
+      marginBottom: 10,
+      marginTop: 10,
+      fontSize: 12
     }}>
       <div style={{
         flexFlow: 'column',
         width: '50%'
       }}>
-        <info.h2>{title}</info.h2>
-        <info.p style={{ textAlign: 'left' }}><code style={{ textTransform: 'lowercase', color: 'rgb(77, 72, 66)' }}>{tools}</code></info.p>
+        <h2 style={{
+          fontFamily: 'mplus m1 light',
+          fontSize: 16
+        }}>{title}</h2>
+        <p style={{ margin: 0, textAlign: 'left' }}><code style={{ textTransform: 'lowercase', color: 'rgb(77, 72, 66)' }}>{tools}</code></p>
       </div>
-      <info.h2 style={{ fontSize: 12, lineHeight: "20px", maxWidth: 110, color: 'rgb(77, 72, 66)', textAlign: 'right' }}>{dates}</info.h2>
+      <h2 style={{ fontSize: 12, lineHeight: "20px", maxWidth: 110, color: 'rgb(77, 72, 66)', textAlign: 'right' }}>{dates}</h2>
     </div>
   </>
 }

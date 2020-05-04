@@ -1,9 +1,5 @@
 import React from 'react'
-import SureDone from './suredone'
-import NIKSUN from './niksun'
-import DIMACS from './dimacs'
-
-
+import { BodyText } from '../../components/Text'
 
 export default () => {
 
@@ -13,12 +9,16 @@ export default () => {
     // color: '#038f88',
     alignItems: 'center',
     alignSelf: 'flex-start',
+    height: '100%',
     justifyContent: 'center',
     width: '100%',
     flexFlow: 'column'
-  }} >
-    <SureDone />
-    <NIKSUN />
-    <DIMACS />
-  </div >
+  }}>
+    <div style={{
+      maxWidth: 600,
+    }}>
+      <BodyText> Gabe Marquez is a musician and software engineer with an appetite for quality. </BodyText>
+    </div>
+  </div>
+
 }

@@ -6,9 +6,18 @@ $yellow: rgb(255, 223, 42);
 @-ms-viewport {
   width: device-width;
 }
+a {
+  text-decoration: none;
+  color:#ffead6;
+
+  &:visited {
+    color:#ffead6;
+  }
+}
 body {
   // background: #656a73;
   background: rgb(8, 5, 2);
+  // background: rgb(14, 10, 8);
   // height: 100%;
   // width: 100%;
   // color: rgb(255, 232, 204);
@@ -39,6 +48,7 @@ h2 {
   margin: 1px 0;
   font-size: 34px;
 }
+
 .underline-hover {
   cursor: pointer;
   &:hover,
@@ -54,6 +64,7 @@ h2 {
   }
 }
 
+$hover-height: 8px;
 .hover-text {
   cursor: pointer;
 
@@ -66,26 +77,33 @@ h2 {
     user-select: none;
   }
 
-  &:hover {
+  &:hover,
+  &.hovered {
     span,
     a {
       text-shadow: 7px $hover-height 2px rgba(0, 0, 0, 0.6);
-      transform: translate(-$hover-height, -$hover-height);
+      transform: translate(0px, -$hover-height);
     }
   }
-  &:active {
+
+  &:active,
+  &.active {
     span,
     a {
-      text-shadow: 3px ($hover-height - 2px) 2px rgba(0, 0, 0, 0.6);
+      color: rgb(62, 255, 191);
+      text-shadow: 3px ($hover-height - 2px) 2px rgba(0, 0, 0, 0.2), 3px ($hover-height - 2px) 1px rgb(255, 62, 255);
       box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
-      transform: translate(-$hover-height + 2px, -$hover-height + 2px);
+      transform: translate(0px, -$hover-height + 2px);
     }
   }
 }
-
 .fullscreen {
   height: 100vh;
   width: 100vw;
+}
+
+p {
+  margin: 10; 
 }
 
 .fill-container {
@@ -123,11 +141,6 @@ div {
 
 .no-text-select {
   user-select: none;
-}
-
-.body {
-  font-family: "OfficeCodePro";
-  font-size: 1.5rem;
 }
 
 .slight-pad {

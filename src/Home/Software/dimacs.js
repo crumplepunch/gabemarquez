@@ -1,5 +1,4 @@
 import React from 'react'
-import { info } from '../../components/Info'
 import { Career } from '../../components/Jobs'
 
 const career = {
@@ -14,6 +13,6 @@ const career = {
 
 export default () => {
   return <Career {...career}>
-    <info.p></info.p>
+    <p></p>
   </Career>
 } 

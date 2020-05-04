@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useWindowDimensions } from '../hooks/index'
 import DisplayText from './DisplayText'
 import { useSpring, animated } from 'react-spring'
@@ -27,7 +27,6 @@ const animatedStyle = {
 
 const AnimatedImage = ({ showDisplayText, showMenu }) => {
   const { height } = useWindowDimensions()
-  const count = useRef(1)
   const [loaded, setLoaded] = useState(false)
 
   const { o, x } = useSpring({
@@ -42,7 +41,7 @@ const AnimatedImage = ({ showDisplayText, showMenu }) => {
         setLoaded(true)
       }
       await next({ o: 1, x: 0 })
-      if (!loaded) {
+      if (loaded) {
         showMenu()
       }
     },
