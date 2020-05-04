@@ -16,6 +16,7 @@ const Header = ({ children }) => {
   return <div style={{
     height,
     justifyContent: "flex-start",
+    zIndex: -1,
     // transform: 'rotate(90deg)',
     overflow: 'hidden'
   }}>

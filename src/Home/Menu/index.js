@@ -4,7 +4,7 @@ import React, {
   useMemo
 } from 'react'
 
-import { useTransition, animated } from 'react-spring'
+import { useTransition, useTrail, animated } from 'react-spring'
 import '../../components/Scroll/scroll.scss'
 
 import Software from '../Software'
@@ -96,12 +96,19 @@ export const Section = ({ children, flex = false, name, selected, transition }) 
     }
   })
 
+
   return (<>
-    <Link to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
+    <div style={{ width: '100%', textAlign: 'right' }} >
+      <Link style={{ marginLeft: -150, minWidth: 120 }} to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
+      <animated.div style={{
+        width: transition.width.interpolate(x => `calc(${x}% + 20px)`),
+        height: 10, marginLeft: 5, borderBottom: 'solid 1px white'
+      }}></animated.div>
+    </div>
 
     <div className="scroll-container" style={{
       flexFlow: 'column',
-      overflowY: 'scroll',
+      overflowY: 'scroll'
     }}>
       {tra.map(({ item, props }) => (
         item && <SectionContent transition={{
@@ -141,24 +148,26 @@ export const Section = ({ children, flex = false, name, selected, transition }) 
 
 export const Menu = () => {
 
-  const [secs] = useState(sections)
   const { currentSection } = useContext(SectionContext)
-
-  const transitions = useTransition(secs, item => item.id, {
-    from: { backgroundColor: 'blue' },
-    enter: { backgorundColor: 'red' },
-    leave: { backgroundColor: 'green' }
+  const trails = useTrail(3, {
+    from: {
+      width: 0
+    },
+    to: {
+      width: 100
+    }
   })
 
+
   return <>
-    <Section transition={transitions[0]} selected={currentSection === 'about'} name='about'>
+    <Section selected={currentSection === 'about'} transition={trails[0]} name='about'>
 
       <About />
     </Section>
-    <Section transition={transitions[1]} selected={currentSection === 'software'} name='software' >
+    <Section selected={currentSection === 'software'} transition={trails[1]} name='software' >
       <Software></Software>
     </Section>
-    <Section transition={transitions[2]} name='music'>
+    <Section select={currentSection === 'music'} transition={trails[2]} name='music'>
     </Section>
   </>
 }
