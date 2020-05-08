@@ -1,22 +1,5 @@
 import React from 'react'
-
-export const Career = ({ company, summary, positions, children: experience }) => {
-  return <div style={{
-    flexFlow: 'column',
-    maxWidth: 600,
-    marginTop: 60
-  }}>
-    <h1 style={{
-      fontSize: 20,
-    }}>{company} </h1>
-    <h2 style={{ fontSize: 20, marginBottom: 10, color: 'rgb(77, 72, 66)' }}>{summary}</h2>
-
-    {experience}
-
-
-    {positions.map((position, key) => <Position key={key} {...position} />)}
-  </div>
-}
+import { Document } from './Document'
 
 export const Position = ({ title, dates, tools }) => {
   return <>
@@ -41,3 +24,29 @@ export const Position = ({ title, dates, tools }) => {
     </div>
   </>
 }
+
+export const Career = ({ company, summary, positions, children: experience }) => {
+  return <div style={{
+    flexFlow: 'column',
+    maxWidth: 600,
+    border: '1px solid #ffead6',
+    marginBottom: 40,
+    borderRadius: '4px',
+  }}>
+
+    <Document config={{
+      margin: '10px 10px 10px 10px'
+    }}>
+    <h1 style={{
+      fontSize: 20,
+    }}>{company} </h1>
+    <h2 style={{ fontSize: 20, marginBottom: 10, color: 'rgb(77, 72, 66)' }}>{summary}</h2>
+
+    {experience}
+
+
+    {positions.map((position, key) => <Position key={key} {...position} />)}
+    </Document>
+  </div>
+}
+

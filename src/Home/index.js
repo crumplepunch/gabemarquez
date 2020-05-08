@@ -1,13 +1,14 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import {
   BrowserRouter,
 } from 'react-router-dom'
-import { useTransition, animated } from 'react-spring'
+import { useSpring, a } from 'react-spring'
 import { useLocation } from 'react-router-dom'
 
 import DisplayImage from './DisplayImage'
-import { useWindowDimensions } from '../hooks/index'
-import { Menu, SectionContext } from './Menu'
+import { useWindowDimensions } from '../hooks'
+import { Menu } from './Menu'
+import { SectionContext } from '../contexts'
 
 
 const Header = ({ children }) => {
@@ -24,43 +25,41 @@ const Header = ({ children }) => {
   </div>
 }
 
+const order = ['about', 'home', 'software']
+const bodyStyle = {
+  borderLeft: 'solid 1px #ffead6',
+  flex: '1',
+  flexFlow: 'column',
+  background: 'rgb(4, 2, 2)'
+}
+
 const Body = ({ children }) => {
   const location = useLocation()
-  const [toggle, setToggle] = useState(true)
+  const sectionMemo = useMemo(() => location.pathname.substr(1), [location])
 
-  const [transition] = useTransition(toggle, null, {
+  const { height, padding } = useSpring({
     from: {
       height: 0,
       padding: 0,
     },
-    enter: {
-      padding: 20,
+    to: {
+      padding: 14,
       height: 100,
-    },
-    leave: {
-      padding: 0,
-      height: 0
     }
   })
 
-  console.log(transition)
-
   return <SectionContext.Provider value={{
-    currentSection: location.pathname.substr(1),
-    order: ['about', 'home', 'software']
+    currentSection: sectionMemo,
+    order
   }}>
-    <animated.div style={{
-      // margin: '20px',
-      borderLeft: 'solid 1px #ffead6',
-      flex: '1',
-      flexFlow: 'column',
-      padding: transition.props.padding,
-      height: transition.props.height.interpolate(height => `calc(${height}vh - 40px)`),
-      // background: 'rgb(4, 2, 2)'
+    <a.div style={{
+      ...bodyStyle,
+      padding,
+      height: height.interpolate(height => `calc(${height}vh - 28px)`),
     }}>
       {children}
-    </animated.div>
-  </SectionContext.Provider >
+    </a.div>
+  </SectionContext.Provider>
 }
 
 
@@ -82,6 +81,7 @@ export default () => {
     <BrowserRouter>
       <Body>
         {showMenu && <Menu />}
+        {/* <Menu /> */}
       </Body>
     </BrowserRouter>
   </div >

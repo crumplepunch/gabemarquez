@@ -12,6 +12,8 @@ const career = {
 
 export default () => {
   return <Career {...career} >
-    <p>Though my time here was short, I lead a complete redesign and rebuild of their flagship product's front end. The industry wasn't a good fit, and this particular gig lacked the mentorship I was looking for as a more junior level engineer. </p>
+    <p>
+      Responsible for UI performance improvement and design. Laid the groundwork for a rebuild of their flagship product's front end.
+    </p>
   </Career>
 }
