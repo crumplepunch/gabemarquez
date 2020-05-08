@@ -10,6 +10,5 @@ export const styled = {
 
 export * from './Scroll'
 export * from './SpringTest'
-export * from './Info'
 export * from './Text'
 export * from './Document'
