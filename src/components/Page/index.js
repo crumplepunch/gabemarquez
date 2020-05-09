@@ -3,6 +3,7 @@ import { useSpring, a } from 'react-spring'
 
 import DisplayImage from './DisplayImage'
 import { useWindowDimensions } from '../../hooks'
+import { useHistory } from 'react-router-dom'
 
 const Header = ({ children }) => {
   const { height } = useWindowDimensions()
@@ -10,7 +11,7 @@ const Header = ({ children }) => {
   return <div style={{
     height,
     justifyContent: "flex-start",
-    zIndex: -1,
+    zIndex: 0,
     // transform: 'rotate(90deg)',
     overflow: 'hidden'
   }}>
@@ -40,6 +41,7 @@ const Body = ({ children }) => {
 
   return <a.div style={{
     ...bodyStyle,
+    zIndex: 2,
     padding,
     height: height.interpolate(height => `calc(${height}vh - 28px)`),
   }}>
@@ -51,14 +53,19 @@ export const Page = ({ children }) => {
   const { height, width } = useWindowDimensions()
   const [showMenu, setShowMenu] = useState(false)
   const showContentCallback = useCallback(() => setShowMenu(true), [setShowMenu])
+  const history = useHistory()
 
   return <div style={{ width }}>
     <Header>
-      <div style={{
-        position: "relative",
-        width: height * 0.604561404,
-        overflow: "hidden"
-      }}>
+      <div
+        onClick={() => {
+          history.push('/')
+        }}
+        style={{
+          position: "relative",
+          width: height * 0.604561404,
+          overflow: "hidden"
+        }}>
         <DisplayImage showMenu={showContentCallback} />
       </div>
     </Header>
