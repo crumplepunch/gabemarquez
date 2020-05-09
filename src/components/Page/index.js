@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react'
 import { useSpring, a } from 'react-spring'
-import { useParams } from 'react-router-dom'
 
 import DisplayImage from './DisplayImage'
 import { useWindowDimensions } from '../../hooks'
@@ -53,8 +52,6 @@ export const Page = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
   const showContentCallback = useCallback(() => setShowMenu(true), [setShowMenu])
 
-  const params = useParams()
-  console.log({ pageParams: params })
   return <div style={{ width }}>
     <Header>
       <div style={{

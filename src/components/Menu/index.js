@@ -28,7 +28,6 @@ export const Menu = ({ sections }) => {
     {
       trails.map((trail, index) => {
         const section = sections[index]
-        console.log({ trail: section })
 
         return <Section key={`${index}${section.name}`} {...section} trail={trail} trailRef={trailRef}>
           <section.content />

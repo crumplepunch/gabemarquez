@@ -6,15 +6,18 @@ export * from '../Home'
 
 export const Software = () => {
   return <Menu sections={[{
-    name: 'startups',
+    name: 'professionally',
+    label: 'professional',
     content: () => {
       return <h1>hello from profesionally </h1>
     },
   }, {
-    name: 'friends',
+    name: 'collaboratively',
+    label: 'friends',
     content: () => null
   }, {
-    name: 'personal',
+    name: 'solo',
+    label: 'solo',
     content: () => null
   }]} />
 }
