@@ -52,10 +52,19 @@
   font-family: "Nichrome Regular";
   src: url("./fonts/Nichrome0.1-Regular.otf") format("opentype");
 }
+@font-face {
+  font-family: "League Gothic Condensed Italic";
+  src: url("./fonts/LeagueGothic-CondensedItalic\ \(1\).otf") format("opentype");
+}
+@font-face {
+  font-family: "League Gothic Italic";
+  src: url("./fonts/LeagueGothic-Italic.otf") format("opentype");
+}
 
 $displayText: "YoungSerif";
 $subHeaderText: "mplus m1 light";
 $bodyText: "Libre Baskerville";
+$headerText: "League Gothic Italic";
 
 .title-text {
   font-family: $displayText;

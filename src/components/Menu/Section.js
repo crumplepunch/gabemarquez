@@ -1,11 +1,18 @@
 import React, { useContext, useMemo, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useWindowDimensions } from '../../hooks'
 import { SectionContext } from '../../contexts'
 import { useSpring, useChain, a } from 'react-spring'
 import { Document } from '../../components'
 
+import { useParams } from 'react-router-dom'
+
 export const SectionContent = ({ children, spring }) => {
+
+  console.log(spring)
+  const params = useParams()
+
+  console.log({ sectionContentParams: params })
 
   return <div className="scroll-container" style={{
     flexFlow: 'column'
@@ -21,11 +28,15 @@ export const SectionContent = ({ children, spring }) => {
 }
 
 const SectionHeader = ({ name, spring }) => {
+  const { pathname } = useLocation()
+  const base = useMemo(() => pathname.split('/')[1], [pathname])
+
+
   return <a.div style={{
     width: '100%', opacity: spring.opacity,
     textAlign: 'right'
   }} >
-    <Link style={{ marginLeft: -124, minWidth: 80 }} to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
+    <Link style={{ marginLeft: -124, minWidth: 80 }} to={`/${base}/${name}`}><code style={{ textTransform: 'capitalize' }}>{name}</code></Link>
     <a.div style={{
       width: spring.width.interpolate(x => `calc(${x}% + 25px)`),
       height: 10,
@@ -36,7 +47,7 @@ const SectionHeader = ({ name, spring }) => {
 }
 
 export const Section = ({ children, name, trail, trailRef }) => {
-  const { height, width } = useWindowDimensions()
+  const { height } = useWindowDimensions()
   const { currentSection } = useContext(SectionContext)
   const selected = useMemo(() => currentSection === name, [currentSection, name])
 
@@ -56,6 +67,9 @@ export const Section = ({ children, name, trail, trailRef }) => {
   })
 
   useChain([trailRef, springRef])
+
+  const params = useParams()
+  console.log({ sectionParams: params })
   return <>
     <SectionHeader name={name} spring={trail} />
     <SectionContent spring={spring}>{children}</SectionContent>

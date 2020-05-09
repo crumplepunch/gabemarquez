@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { useWindowDimensions } from '../hooks/index'
+import { useWindowDimensions } from '../../hooks/index'
 import DisplayText from './DisplayText'
 import { useSpring, animated } from 'react-spring'
 

@@ -1,33 +1,11 @@
-import React, { useRef } from 'react'
-
+import React, { useRef, useMemo } from 'react'
 import { useTrail } from 'react-spring'
-
-import Software from '../Resume'
-import About from '../About'
-import Music from '../Music'
 import { Section } from './Section'
-
+import { useParams } from 'react-router-dom'
+import { SectionContext } from '../../contexts'
 import '../../components/Scroll/scroll.scss'
 
-
-const sections = [
-  {
-    name: 'about',
-    content: () => <About />
-  },
-  {
-    name: 'software',
-    content: () => <Software />
-  }, {
-    name: 'music',
-    content: () => <Music />
-  }, {
-    name: 'thoughts',
-    content: () => null
-  }
-]
-
-export const Menu = () => {
+export const Menu = ({ sections }) => {
   const trailRef = useRef()
   const trails = useTrail(sections.length, {
     from: {
@@ -41,16 +19,23 @@ export const Menu = () => {
     ref: trailRef
   })
 
-  return <>
+  const params = useParams()
+  const { section } = params
+
+  const currentSection = useMemo(() => section, [section])
+
+  return <SectionContext.Provider value={{ currentSection }}>
     {
       trails.map((trail, index) => {
         const section = sections[index]
+        console.log({ trail: section })
+
         return <Section key={`${index}${section.name}`} {...section} trail={trail} trailRef={trailRef}>
           <section.content />
         </Section>
       })
     }
-  </>
+  </SectionContext.Provider>
 }
 
 export * from './Section'

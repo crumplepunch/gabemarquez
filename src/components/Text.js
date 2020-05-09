@@ -23,12 +23,12 @@ export const TitleText = ({ children }) => {
 }
 
 export const BodyText = ({ children }) => {
-  const { y, o } = useSpring({
-    from: { y: -30, o: 0 },
-    to: async (next) => {
-      await next({ y: 0, o: 1 })
-    }
-  })
+  // const { y, o } = useSpring({
+  //   from: { y: -30, o: 0 },
+  //   to: async (next) => {
+  //     await next({ y: 0, o: 1 })
+  //   }
+  // })
 
   const props = {
     className: 'body',

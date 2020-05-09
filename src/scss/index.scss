@@ -38,7 +38,8 @@ div {
 }
 
 h1 {
-  font-family: $displayText;
+  font-family: $headerText;
+  text-transform: uppercase ;
   font-size: 80px;
   margin: 0;
   font-weight: normal;

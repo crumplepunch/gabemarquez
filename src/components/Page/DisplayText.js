@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
-import { useWindowDimensions } from '../hooks/index'
+import { useWindowDimensions } from '../../hooks/index'
 
 
 export default () => {
