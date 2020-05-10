@@ -1,5 +1,5 @@
 import React from 'react'
-import { Career } from '../../components/Jobs'
+import { Career } from '../../../components/Jobs'
 
 const career = {
   company: 'SureDone',

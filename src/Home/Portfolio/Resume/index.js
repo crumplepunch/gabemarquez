@@ -3,8 +3,6 @@ import SureDone from './suredone'
 import NIKSUN from './niksun'
 import DIMACS from './dimacs'
 
-
-
 export default () => {
 
   return <div style={{
@@ -17,8 +15,8 @@ export default () => {
     width: '100%',
     flexFlow: 'column'
   }} >
-    {/* <SureDone />
+    <SureDone />
     <NIKSUN />
-    <DIMACS /> */}
+    <DIMACS />
   </div >
 }

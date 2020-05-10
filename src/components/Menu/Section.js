@@ -1,5 +1,5 @@
 import React, { useContext, useMemo, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useWindowDimensions } from '../../hooks'
 import { SectionContext } from '../../contexts'
 import { useSpring, useChain, a } from 'react-spring'
@@ -21,15 +21,12 @@ export const SectionContent = ({ children, spring }) => {
 }
 
 const SectionHeader = ({ name, spring, label }) => {
-  const { pathname } = useLocation()
-  const base = useMemo(() => pathname.split('/')[1], [pathname])
-
 
   return <a.div style={{
     width: '100%', opacity: spring.opacity,
     textAlign: 'right'
   }} >
-    <Link style={{ marginLeft: -144, minWidth: 100 }} to={`/${base}/${name}`}><code style={{ textTransform: 'capitalize' }}>{label || name}</code></Link>
+    <Link style={{ marginLeft: -144, minWidth: 100 }} to={`/${name}`}><code style={{ textTransform: 'capitalize' }}>{label || name}</code></Link>
     <a.div style={{
       width: spring.width.interpolate(x => `calc(${x}% + 25px)`),
       height: 10,
@@ -39,7 +36,7 @@ const SectionHeader = ({ name, spring, label }) => {
   </a.div>
 }
 
-export const Section = ({ children, name, trail, trailRef, label }) => {
+export const Section = ({ children, name, trail, trailRef, label, menu }) => {
   const { height } = useWindowDimensions()
   const { currentSection } = useContext(SectionContext)
   const selected = useMemo(() => currentSection === name, [currentSection, name])
@@ -63,6 +60,6 @@ export const Section = ({ children, name, trail, trailRef, label }) => {
 
   return <>
     <SectionHeader name={name} spring={trail} label={label} />
-    <SectionContent spring={spring}>{children}</SectionContent>
+    <SectionContent spring={spring} menu={menu}>{children}</SectionContent>
   </>
 }

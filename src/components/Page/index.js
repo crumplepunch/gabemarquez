@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import { useSpring, a } from 'react-spring'
 
-import DisplayImage from './DisplayImage'
 import { useWindowDimensions } from '../../hooks'
-import { useHistory } from 'react-router-dom'
+import DisplayImage from './DisplayImage'
 
 const Header = ({ children }) => {
   const { height } = useWindowDimensions()
@@ -53,13 +52,12 @@ export const Page = ({ children }) => {
   const { height, width } = useWindowDimensions()
   const [showMenu, setShowMenu] = useState(false)
   const showContentCallback = useCallback(() => setShowMenu(true), [setShowMenu])
-  const history = useHistory()
 
   return <div style={{ width }}>
     <Header>
       <div
         onClick={() => {
-          history.push('/')
+          // history.push('/')
         }}
         style={{
           position: "relative",

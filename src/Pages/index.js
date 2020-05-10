@@ -1,23 +1,63 @@
 import React from 'react'
 import { Menu } from '../components'
 
+import Professional from './Professional'
+import Friends from './Friends'
+import About from './About'
+import Shows from './Bands'
 
-export * from '../Home'
 
 export const Software = () => {
   return <Menu sections={[{
     name: 'professionally',
     label: 'professional',
     content: () => {
-      return <h1>hello from profesionally </h1>
-    },
+      return <Professional />
+    }
   }, {
     name: 'collaboratively',
     label: 'friends',
-    content: () => null
+    content: () => <Friends />
   }, {
     name: 'solo',
     label: 'solo',
     content: () => null
   }]} />
 }
+
+export const Music = () => {
+  return <Menu sections={[{
+    name: 'soon',
+    label: 'events',
+    content: () => null
+  }, {
+    name: 'solo',
+    label: 'solo',
+    content: () => null
+  }, {
+    name: 'friends',
+    label: 'friends',
+    content: () => null
+  }]} />
+}
+
+export const Home = () => {
+  return <Menu sections={[
+    {
+      name: 'human',
+      label: 'about',
+      content: About
+    }, {
+      name: 'programming',
+      label: 'software',
+      menu: ['Projects', 'Friends', 'Resume'],
+      content: Professional
+    }, {
+      name: 'loud',
+      label: 'music',
+      content: Shows,
+      menu: ['Performance', 'Studio', 'Recordings']
+    },
+  ]} />
+}
+

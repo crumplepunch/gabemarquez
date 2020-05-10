@@ -22,6 +22,7 @@ const style = {
   container: {
     display: 'flex',
     flexFlow: 'row',
+    flex: '1',
     width: '100%'
   },
   content: {
