@@ -16,7 +16,7 @@ export const Menu = ({ sections }) => {
       opacity: 1,
       width: 100
     },
-    ref: trailRef
+    // ref: trailRef
   })
 
   const params = useParams()

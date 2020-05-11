@@ -52,8 +52,7 @@ export const Section = ({ children, name, trail, trailRef, label, menu }) => {
       height: selected ? height : 0,
       opacity: selected ? 1 : 0,
       // transform: `translate3d(${selected ? 0 : 200}px,0,0)`
-    },
-    ref: springRef
+    }
   })
 
   useChain([trailRef, springRef])
