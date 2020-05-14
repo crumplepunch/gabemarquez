@@ -19,7 +19,7 @@ export default () => {
     }}>
       <h1>Hello!</h1>
       <p>I am a software engineer and musician living in Jersey City, working and playing around NYC.</p>
-      <p>Do you have an idea you need help on? Hit my inbox with the rest.</p>
+      <p>Currently looking for programming work. </p>
       <p><a href="mailto: who@gabe.is">who@gabe.is</a></p>
     </div>
   </div>

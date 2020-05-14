@@ -32,8 +32,8 @@ const Card = ({ children }) => {
         height: '120px',
         width: '120px',
         flexFlow: 'column',
-        backgroundColor: '#ffead6',
-        border: 'solid 1px #ffead6',
+        backgroundImage: 'linear-gradient(135deg, #ffead6 0%, #b6dfef 100%)',
+        // border: 'solid 1px #ffead6',
         borderRadius: 4,
         padding: 20,
         margin: 20,
@@ -50,6 +50,7 @@ const Card = ({ children }) => {
         width: 160,
         margin: 20,
         border: 'solid 1px #ffead6',
+        boxSizing: 'border-box',
         borderRadius: 80,
         transform: props.xys.interpolate(recordTrans)
       }}>
@@ -89,7 +90,6 @@ export default () => {
       cursor: 'pointer',
     }}>
       <h1 style={{ fontSize: 30 }}>Artists</h1>
-      <p>Artists I perform with</p>
       <div style={{
         maxWidth: 800,
         flexFlow: 'row',
@@ -105,7 +105,6 @@ export default () => {
       cursor: 'pointer',
     }}>
       <h1 style={{ fontSize: 30 }}>History</h1>
-      <p>Artists I no longer perform with but love dearly</p>
       <div style={{
         maxWidth: 800,
         flexFlow: 'row',
@@ -120,8 +119,7 @@ export default () => {
       flexFlow: 'column',
       cursor: 'pointer',
     }}>
-      <h1 style={{ fontSize: 30 }}>Special Mention</h1>
-      <p>Artists that deserve a shoutout</p>
+      <h1 style={{ fontSize: 30 }}>Friends</h1>
       <div style={{
         maxWidth: 800,
         flexFlow: 'row',

@@ -48,11 +48,6 @@ export const Home = () => {
       label: 'about',
       content: About
     }, {
-      name: 'programming',
-      label: 'software',
-      menu: ['Projects', 'Friends', 'Resume'],
-      content: Professional
-    }, {
       name: 'loud',
       label: 'music',
       content: Shows,
