@@ -18,10 +18,13 @@ export default () => {
       flexFlow: 'column'
     }}>
       <h1>Hello!</h1>
-      <p>I am a software engineer and musician living in Jersey City, working and playing around NYC.</p>
-      <p>Currently looking for programming work. </p>
-      <p><a href="mailto: who@gabe.is">who@gabe.is</a></p>
+      <p>I am a programmer and musician living in Jersey City with a strong love for coffee and algebraic topology.</p>
+      <p>Looking to write software or music? </p>
+      <p>Let's link!</p>
+      <p><a href="mailto: who@gabe.is" style={{
+        textDecoration: 'underline'
+      }}>who@gabe.is</a></p>
     </div>
   </div>
 
-}   
+}

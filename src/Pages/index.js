@@ -47,12 +47,7 @@ export const Home = () => {
       name: 'human',
       label: 'about',
       content: About
-    }, {
-      name: 'loud',
-      label: 'music',
-      content: Shows,
-      menu: ['Performance', 'Studio', 'Recordings']
-    },
+    }
   ]} />
 }
 
